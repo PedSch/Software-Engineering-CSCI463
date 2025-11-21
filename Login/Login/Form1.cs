@@ -15,7 +15,14 @@ namespace Login
         public Form1()
         {
             InitializeComponent();
-            textBox2.Select(0, 0);
+            
+            // Initialize textBox2 (Username)
+            textBox2.Text = "Enter Username";
+            textBox2.ForeColor = Color.DarkGray;
+            
+            // Initialize textBox1 (Password)
+            textBox1.Text = "Enter Password";
+            textBox1.ForeColor = Color.DarkGray;
             textBox1.UseSystemPasswordChar = false;
         }
 
@@ -28,8 +35,8 @@ namespace Login
             {
                 textBox1.Clear();
                 textBox1.ForeColor = Color.Black;
+                textBox1.UseSystemPasswordChar = true;
             }
- 
         }
 
         private void TextBox2_KeyDown(object sender, KeyEventArgs e)
@@ -51,35 +58,42 @@ namespace Login
 
             if (textBox1.Text.Length < 1)
             {
-                //textBox1.Forecolor = Color.DarkGray;
+                textBox1.ForeColor = Color.DarkGray;
                 textBox1.UseSystemPasswordChar = false;
-                textBox1.Text = "Enter Password ";
+                textBox1.Text = "Enter Password";
             }
         }
+        
         private void textbox1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "Enter Password")
             {
                 textBox1.Clear();
-                textBox1.UseSystemPasswordChar = false;
+                textBox1.UseSystemPasswordChar = true;
                 textBox1.ForeColor = Color.Black;
             }
 
             if (textBox2.Text.Length < 1)
             {
-                //textBox2.Forecolor = Color.DarkGray;
-                textBox2.Text = "Enter Username ";
+                textBox2.ForeColor = Color.DarkGray;
+                textBox2.Text = "Enter Username";
             }
         }
+        
         private void Form1_Click(object sender , EventArgs e)
         {
             if (textBox1.Text.Length < 1)
             {
-                //textBox1.Forecolor = Color.DarkGray;
+                textBox1.ForeColor = Color.DarkGray;
                 textBox1.UseSystemPasswordChar = false;
-                textBox1.Text = "Enter Password ";
+                textBox1.Text = "Enter Password";
             }
-           
+            
+            if (textBox2.Text.Length < 1)
+            {
+                textBox2.ForeColor = Color.DarkGray;
+                textBox2.Text = "Enter Username";
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
